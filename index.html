@@ -19,6 +19,26 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="images/favicon.ico">
+	<script>
+		const formd = document.getElementById('formd')
+		formd.addEventListener('submit', (e)=>{
+			e.preventDefault();
+			const name = document.getElementById('namef').value;
+            const company = document.getElementById('emailf').value;
+            const email = document.getElementById('subjectf').value;
+            const message = document.getElementById('messagef').value;
+			const data = {name,company,email,message}
+			// console.log(data)
+			fetch('https://expenses-1f75d-default-rtdb.firebaseio.com/',{
+				method:'POST',
+				body:JSON.stringify(data),
+				headers:{
+					'Contect-Type':'application/json'
+				}
+			}).then(res=>res.josn).then(data=>{console.log(data)})
+		})
+
+	</script>
 
 
 
@@ -36,29 +56,25 @@
 			padding-top: 0px;
 		}
 
-		#grid {
-			display: grid;
-			grid-template-columns: 6fr 6fr;
-		}
 
-		#all {
-			margin-left: 400px;
-		}
+
+
 
 		#projects-section {
 			margin-top: -30px;
 			padding-top: 0px;
 		}
 
-		#projectt {
-			margin-bottom: 0px;
-			margin-bottom: 0px;
-		}
+
 
 		#crud {
 			color: white;
 			font-size: 15px;
 		}
+		/* .grid-container {
+  display: grid;
+  grid-template-columns: 80px 200px auto 40px;
+} */
 	</style>
 
 </head>
@@ -136,10 +152,10 @@
 							<div class="col-md-12 heading-section ftco-animate">
 								<span class="subheading">My Intro</span>
 								<h2 class="mb-4" style="font-size: 34px; text-transform: capitalize;">About Me</h2>
-								<p>I am a B. Tech Fresher(2021) with technical background but recently switched the
+								<p>I am a B. Tech graduate(2021) with technical background but recently switched the
 									ambition to find my own way in the IT Industry typically in the field of Web
-									Development. I have done" UI Full stack Web Development Course". Currently I am
-									learning React Js.</p>
+									Development. I have done" UI Full stack Web Development Course. I prefer React as a Front End , currently I am
+									learning Node Js.</p>
 
 								<ul class="about-info mt-4 px-md-0 px-2">
 									<li class="d-flex"><span>Name:</span> <span>Mohammad Mudassar Nazar</span></li>
@@ -199,10 +215,10 @@
 			<div class="row progress-circle mb-5">
 				<div class="col-lg-4 mb-4">
 					<div class="bg-white rounded-lg shadow p-4">
-						<h2 class="h5 font-weight-bold text-center mb-4">HTML/CSS/BOOTSTRAP</h2>
+						<h2 class="h5 font-weight-bold text-center mb-4">HTML-CSS-BOOTSTRAP</h2>
 
 						<!-- Progress bar 1 -->
-						<div class="progress mx-auto" data-value='70'>
+						<div class="progress mx-auto" data-value='80'>
 							<span class="progress-left">
 								<span class="progress-bar border-primary"></span>
 							</span>
@@ -211,7 +227,7 @@
 							</span>
 							<div
 								class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-								<div class="h2 font-weight-bold">70<sup class="small">%</sup></div>
+								<div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
 							</div>
 						</div>
 						<!-- END -->
@@ -224,7 +240,7 @@
 
 				<div class="col-lg-4 mb-4">
 					<div class="bg-white rounded-lg shadow p-4">
-						<h2 class="h5 font-weight-bold text-center mb-4">JavaScript
+						<h2 class="h5 font-weight-bold text-center mb-4">JavaScript-jQuery-ajax
 						</h2>
 
 						<!-- Progress bar 1 -->
@@ -252,10 +268,10 @@
 
 				<div class="col-lg-4 mb-4">
 					<div class="bg-white rounded-lg shadow p-4">
-						<h2 class="h5 font-weight-bold text-center mb-4">JQuery/Ajax</h2>
+						<h2 class="h5 font-weight-bold text-center mb-4">React</h2>
 
 						<!-- Progress bar 1 -->
-						<div class="progress mx-auto" data-value='30'>
+						<div class="progress mx-auto" data-value='75'>
 							<span class="progress-left">
 								<span class="progress-bar border-primary"></span>
 							</span>
@@ -264,7 +280,7 @@
 							</span>
 							<div
 								class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-								<div class="h2 font-weight-bold">30<sup class="small">%</sup></div>
+								<div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
 							</div>
 						</div>
 						<!-- END -->
@@ -277,7 +293,7 @@
 
 				<div class="col-lg-4 mb-4">
 					<div class="bg-white rounded-lg shadow p-4">
-						<h2 class="h5 font-weight-bold text-center mb-4">NodeJs</h2>
+						<h2 class="h5 font-weight-bold text-center mb-4">NodeJs-MongoDB</h2>
 
 						<!-- Progress bar 1 -->
 						<div class="progress mx-auto" data-value='60'>
@@ -302,32 +318,7 @@
 
 				<div class="col-lg-4 mb-4">
 					<div class="bg-white rounded-lg shadow p-4">
-						<h2 class="h5 font-weight-bold text-center mb-4">MongoDB</h2>
-
-						<!-- Progress bar 1 -->
-						<div class="progress mx-auto" data-value='70'>
-							<span class="progress-left">
-								<span class="progress-bar border-primary"></span>
-							</span>
-							<span class="progress-right">
-								<span class="progress-bar border-primary"></span>
-							</span>
-							<div
-								class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-								<div class="h2 font-weight-bold">70<sup class="small">%</sup></div>
-							</div>
-						</div>
-						<!-- END -->
-
-						<!-- Demo info -->
-
-						<!-- END -->
-					</div>
-				</div>
-
-				<div class="col-lg-4 mb-4">
-					<div class="bg-white rounded-lg shadow p-4">
-						<h2 class="h5 font-weight-bold text-center mb-4">React </h2>
+						<h2 class="h5 font-weight-bold text-center mb-4">NextJs</h2>
 
 						<!-- Progress bar 1 -->
 						<div class="progress mx-auto" data-value='40'>
@@ -346,6 +337,31 @@
 
 						<!-- Demo info -->
 
+						<!-- END -->
+					</div>
+				</div>
+
+				<div class="col-lg-4 mb-4">
+					<div class="bg-white rounded-lg shadow p-4">
+						<h2 class="h5 font-weight-bold text-center mb-4">Firebase-Firestore </h2>
+
+						<!-- Progress bar 1 -->
+						<div class="progress mx-auto" data-value='70'>
+							<span class="progress-left">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<span class="progress-right">
+								<span class="progress-bar border-primary"></span>
+							</span>
+							<div
+								class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+								<div class="h2 font-weight-bold">70<sup class="small">%</sup></div>
+							</div>
+						</div>
+						<!-- END -->
+
+						<!-- Demo info -->
+
 					</div>
 				</div>
 			</div>
@@ -357,7 +373,7 @@
 
 	<section class="ftco-section ftco-project " id="projects-section">
 		<div class="container-fluid px-md-4 ">
-			<div class="row justify-content-center  ">
+			<div class="row justify-content-center pb-5 ">
 				<div class="col-md-12 heading-section text-center ftco-animate ">
 
 					<h2>Projects</h2>
@@ -368,7 +384,7 @@
 						Currently
 						working on others
 						as
-						well .Some of them are document as the run on backend but some of them are real time websites.
+						well .
 						You can visit the websites linked below.</p>
 				</div>
 			</div>
@@ -377,9 +393,10 @@
 					<font color="#aaaaaa">React Projects:</font>
 				</h3>
 			</div>
-			<div class="justify-content-center" style="display: flex;">
-
-				<div class="col-md-3  justify-content-center">
+  
+			<div class="justify-content-center px-md-4" >
+			<div class="row">
+				<div class="col-md-3  ">
 					<div class="project img shadow ftco-animate d-flex justify-content-center align-items-center "
 						style="background-image: url(images/work-9.png);">
 						<div class="overlay"></div>
@@ -394,23 +411,90 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3">
-					<div class="project img shadow ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/monsters-rolodex.png);">
+				
+				<div class="col-md-3  ">
+					<div class="project img shadow ftco-animate d-flex justify-content-center align-items-center "
+						style="background-image: url(images/work-10.png);">
 						<div class="overlay"></div>
 						<div class="text text-center p-4">
-							<h3><a href="./images/mons.pdf" target="_blank">preview</a>
+							<h3 style="color:white">Used REDUX - HTTP PUT - FIREBASE
 							</h3>
 							<br>
 							<br>
-							<p><a href="https://muddunazar.github.io/monsters-rolodex/" target="_blank"
-									class="btn btn-primary btn-outline-primary">Go to monsters-rolodex</a></p>
+							<p><a href="https://advanced-redux-card-data.web.app/" target="_blank"
+									class="btn btn-primary btn-outline-primary">Go to REDUX-CART</a></p>
 
 						</div>
 					</div>
 				</div>
+				<div class="col-md-3  ">
+					<div class="project img shadow ftco-animate d-flex justify-content-center align-items-center "
+						style="background-image: url(images/work-11.png);">
+						<div class="overlay"></div>
+						<div class="text text-center p-4">
+							<h3 style="color:white"> Used React Routing v6 - Firebase
+							</h3>
+							<br>
+							<br>
+							<p><a href="https://routing-v-6.web.app/quotes" target="_blank"
+									class="btn btn-primary btn-outline-primary">Go to Quotes-website</a></p>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3  ">
+					<div class="project img shadow ftco-animate d-flex justify-content-center align-items-center "
+						style="background-image: url(images/work-12.png);">
+						<div class="overlay"></div>
+						<div class="text text-center p-4">
+							<h3 style="color:white"> Used Context API - Firebase
+							</h3>
+							<br>
+							<br>
+							<p><a href="https://food-order-data-65905.web.app/" target="_blank"
+									class="btn btn-primary btn-outline-primary">Go to React-Meals</a></p>
+
+						</div>
+					</div>
+				</div>
+				
+				
+				</div>
 
 			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-3">
+					<div class="project img shadow ftco-animate d-flex justify-content-center align-items-center"
+						style="background-image: url(images/work-13.png);">
+						<div class="overlay"></div>
+						<div class="text text-center p-4">
+
+							<p><a href="https://expenses-1f75d.web.app/" target="_blank"
+									class="btn btn-primary btn-outline-primary">Go to Expenses Website</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<h3>
+					<font color="#aaaaaa">NextJs Projects:</font>
+				</h3>
+			</div>
+			<div class="justify-content-center" style="display: flex;">
+				<div class="col-md-3">
+					<div class="project img shadow ftco-animate d-flex justify-content-center align-items-center"
+						style="background-image: url(images/work-14.png);">
+						<div class="overlay"></div>
+						<div class="text text-center p-4">
+
+							<button class="btn btn-primary btn-outline-primary"><a id="crud" href="https://meet-up-five.vercel.app/"
+									target="_blank">Go to Meetup Website</a></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
 			<div class="row justify-content-center">
 				<h3>
 					<font color="#aaaaaa">Node js + ajax-jQuery Projects:</font>
@@ -520,7 +604,7 @@
 	<br>
 	<br>
 
-	<section class="ftco-section bg-light " id="blog-section">
+	<section class="ftco-section bg-light " style='margin: 0 20px;'id="blog-section">
 		<div class="">
 			<section class="mytabs_area p_120 ">
 				<div style="background-color: #b1b493;" class="container">
@@ -583,59 +667,88 @@
 		</div>
 	</section>
 
+
 	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-3">
 				<div class="col-md-7 heading-section text-center ftco-animate">
-					<span class="subheading">Get In Touch</span>
-
+					<span class="subheading">GET IN TOUCH</span>
+					
 				</div>
 			</div>
 
-
-
-		</div>
-
-		<div id="all">
-			<div id="grid" class="row">
-				<div class="dbox w-100 d-flex">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="fa fa-map-marker"></span>
-					</div>
-					<div class="text">
-						<p><span>Address:</span> Nanded, Maharashtra, India</p>
-					</div>
+			<div class="row block-9">
+				<div class="col-md-8">
+					<form id="formd" method="post" class="bg-light p-4 p-md-5 contact-form">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Your Name" id="namef">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Your Email" id="emailf">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Subject" id="subjectf">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message" id="messagef"></textarea>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+								</div>
+							</div>
+						</div>
+					</form>
+					
 				</div>
-				<div class="dbox w-100 d-flex">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="fa fa-phone"></span>
+
+				<div class="col-md-4 d-flex pl-md-5">
+					<div class="row">
+						<div class="dbox w-100 d-flex">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="fa fa-map-marker"></span>
+							</div>
+							<div class="text">
+								<p><span>Address:</span> Nanded, Maharashtra, India.</p>
+							</div>
+						</div>
+						<div class="dbox w-100 d-flex">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="fa fa-phone"></span>
+							</div>
+							<div class="text">
+								<p><span>Phone:</span> <a href="tel:918806779818">+ 91 8806779818</a></p>
+							</div>
+						</div>
+						<div class="dbox w-100 d-flex">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="fa fa-paper-plane"></span>
+							</div>
+							<div class="text">
+								<p><span>Email:</span> <a href="mailto:mudassarnazar3010@gmail.com">mudassarnazar3010@gmail.com</a></p>
+							</div>
+						</div>
+						<div class="dbox w-100 d-flex">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="fa fa-globe"></span>
+							</div>
+							<div class="text">
+									<p><span>Linked In</span> <a href="http://www.linkedin.com/in/mudassar10" target="_blank">www.linkedin.com/in/mudassar10</a></p>
+							</div>
+						</div>
 					</div>
-					<div class="text">
-						<p><span>Phone:</span> <a href="tel://+918806779818">+ 91 8806779818</a></p>
-					</div>
-				</div>
-				<div class="dbox w-100 d-flex">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="fa fa-paper-plane"></span>
-					</div>
-					<div class="text">
-						<p><span>Email:</span> <a href="mailto:mudassarnazar3010@gmail.com">
-								mudassarnazar3010@gmail.com</a></p>
-					</div>
-				</div>
-				<div class="dbox w-100 d-flex">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="fa fa-globe"></span>
-					</div>
-					<div class="text">
-						<p><span>Linked In</span> <a
-								href="http://www.linkedin.com/in/mudassar10">www.linkedin.com/in/mudassar10</a></p>
-					</div>
+					<!-- <div id="map" class="map"></div> -->
 				</div>
 			</div>
-			<!-- <div id="map" class="map"></div> -->
-		</div>
-		</div>
 		</div>
 	</section>
 	<div class="text-center">
