@@ -19,29 +19,7 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="images/favicon.ico">
-	<script>
-		const formd = document.getElementById('formd')
-		formd.addEventListener('submit', (e)=>{
-			e.preventDefault();
-			const name = document.getElementById('namef').value;
-            const company = document.getElementById('emailf').value;
-            const email = document.getElementById('subjectf').value;
-            const message = document.getElementById('messagef').value;
-			const data = {name,company,email,message}
-			// console.log(data)
-			fetch('https://expenses-1f75d-default-rtdb.firebaseio.com/',{
-				method:'POST',
-				body:JSON.stringify(data),
-				headers:{
-					'Contect-Type':'application/json'
-				}
-			}).then(res=>res.josn).then(data=>{console.log(data)})
-		})
-
-	</script>
-
-
-
+	
 	<style>
 		#skills-section,
 		#blog-section,
@@ -58,8 +36,6 @@
 
 
 
-
-
 		#projects-section {
 			margin-top: -30px;
 			padding-top: 0px;
@@ -71,10 +47,52 @@
 			color: white;
 			font-size: 15px;
 		}
-		/* .grid-container {
-  display: grid;
-  grid-template-columns: 80px 200px auto 40px;
-} */
+		#abccc:hover{
+			color: white;
+		}
+		#topd{
+			overflow: hidden;
+		}
+		#topd img{
+			width: 100%;
+			height: 100%;
+			
+			
+		}
+		.bann{
+			position: relative;
+			top: 400px;
+			background-color: rgba(11, 11, 11, 1);
+			
+			
+		}
+		.textdd{
+			position: absolute;
+			top: 50px;
+
+
+		}
+		.hero {
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero::before {    
+      content: "";
+      background-image: url('/images/bg_4.jpg');
+	  background-position: center;
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.9;
+}
 	</style>
 
 </head>
@@ -104,7 +122,29 @@
 		</div>
 	</nav>
 	<section id="home-section" class="hero">
-		<div class="home-slider owl-carousel">
+		
+		<!-- <div id="topd" class=" align-items-end justify-content-end" >
+			<img src="/images/bg_1.jpg"/>
+			<div class="text">
+				<span class="subheading" style="font-size: 40px;color: #000;">Hello! this is</span><br/><br/>
+				<h1 class="mb-4 mt-3" style="font-size: 60px;font-weight:bolder ;color: rgb(65, 4, 4);"> Mohammad Mudassar Nazar <br><span> Web Developer</span></h1>
+				<p><a href="#contact-section" class="btn btn-primary">Hire me</a> &nbsp;&nbsp;&nbsp;<a
+						href="./documents/Resume 1.pdf" target="_blank"
+						class="btn btn-primary btn-outline-primary">Download CV</a></p>
+			</div>
+			
+		</div> -->
+		<div class="hero">
+			<div class="textdd">
+				<span class="subheading" style="font-size: 40px;color: #000;">Hello! this is</span><br/><br/>
+				<h1 class="mb-4 mt-3" style="font-size: 60px;font-weight:bolder ;color: rgb(82, 4, 4);"> Mohammad Mudassar Nazar <br><span> Web Developer</span></h1>
+				<p><a href="#contact-section" class="btn btn-primary">Hire me</a> &nbsp;&nbsp;&nbsp;<a
+						href="./documents/Resume 1.pdf" target="_blank"
+						class="btn btn-primary btn-outline-primary">Download CV</a></p>
+			</div>
+		</div>
+		
+		<!-- <div class="home-slider owl-carousel">
 			<div class="slider-item">
 				<div class="overlay"></div>
 				<div class="container-fluid px-md-0">
@@ -129,7 +169,7 @@
 			</div>
 
 
-		</div>
+		</div> -->
 	</section>
 
 	<br>
@@ -160,7 +200,7 @@
 								<ul class="about-info mt-4 px-md-0 px-2">
 									<li class="d-flex"><span>Name:</span> <span>Mohammad Mudassar Nazar</span></li>
 									<li class="d-flex"><span>Date of birth:</span> <span>August 29, 1999</span></li>
-									<li class="d-flex"><span>Address:</span> <span>Maharashtra India</span>
+									<li class="d-flex"><span>Address:</span> <span>Maharashtra, India</span>
 									</li>
 									<li class="d-flex"><span>Email:</span> <span>mudassarnazar3010@gmail.com</span></li>
 									<li class="d-flex"><span>Phone: </span> <span>+91 8806779818</span></li>
@@ -676,43 +716,11 @@
 					
 				</div>
 			</div>
+			
+			<div class="row justify-content-center"> 
 
-			<div class="row block-9">
-				<div class="col-md-8">
-					<form id="formd" method="post" class="bg-light p-4 p-md-5 contact-form">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Your Name" id="namef">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Your Email" id="emailf">
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<input type="text" class="form-control" placeholder="Subject" id="subjectf">
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message" id="messagef"></textarea>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-								</div>
-							</div>
-						</div>
-					</form>
-					
-				</div>
-
-				<div class="col-md-4 d-flex pl-md-5">
-					<div class="row">
+				 <div class="col-md-4 d-flex pl-md-5 d-flex ">
+					<div class="row  " >
 						<div class="dbox w-100 d-flex">
 							<div class="icon d-flex align-items-center justify-content-center">
 								<span class="fa fa-map-marker"></span>
@@ -746,13 +754,12 @@
 							</div>
 						</div>
 					</div>
-					<!-- <div id="map" class="map"></div> -->
 				</div>
 			</div>
 		</div>
 	</section>
 	<div class="text-center">
-		<p class=" btn btn-primary btn-outline-primary"><a href="#home-section">Back to Top</a></p>
+		<p class=" btn btn-primary btn-outline-primary"><a id="abccc" href="#home-section">Back to Top</a></p>
 	</div>
 
 
