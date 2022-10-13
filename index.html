@@ -59,6 +59,23 @@
 			
 			
 		}
+		#hell-a{
+			font-size: 15px;
+			color: #000;
+			font-weight: bolder;
+			
+		}
+		#hell-b{
+			font-size: 30px;
+			font-weight:bolder ;
+			color: rgb(82, 4, 4);
+		}
+		#hell-c{
+			font-size: 20px;
+			font-weight:bold ;
+			color: rgb(74, 111, 0);
+			margin-bottom: 70px;
+		}
 		.bann{
 			position: relative;
 			top: 400px;
@@ -68,9 +85,51 @@
 		}
 		.textdd{
 			position: absolute;
-			top: 50px;
+			top: 20px;
+			text-align: center;
 
 
+		}
+		.hero {
+			background-image: url('images/bg_9.jpg');
+    position: relative; 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .hero::before {    
+      content: "";
+      background-image: url('images/bg_9.jpg');
+	  background-position: center;
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.9;
+} */
+		@media (min-width:800px) {
+			#hell-a{
+			font-size: 40px;
+			color: #000;
+			font-weight: normal;
+			
+		}
+		#hell-b{
+			margin-top: 0px;
+			font-size: 70px;
+			font-weight:bolder ;
+			color: rgb(82, 4, 4);
+		}
+		#hell-c{
+			font-size: 50px;
+			font-weight:bold ;
+			color: rgb(74, 111, 0);
+			margin-bottom: 40px;
 		}
 		.hero {
 			background-image: url('images/bg_4.jpg');
@@ -80,6 +139,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+	text-align: center;
 }
 
 .hero::before {    
@@ -93,7 +153,16 @@
       bottom: 0px;
       left: 0px;
       opacity: 0.9;
+	  align-items: center;
 }
+.textdd{
+			position: absolute;
+			top: 70px;
+
+
+		}
+			}/**/
+		
 	</style>
 
 </head>
@@ -137,11 +206,12 @@
 		</div> -->
 		<div class="hero">
 			<div class="textdd">
-				<span class="subheading" style="font-size: 40px;color: #000;">Hello! this is</span><br/><br/>
-				<h1 class="mb-4 mt-3" style="font-size: 60px;font-weight:bolder ;color: rgb(82, 4, 4);"> Mohammad Mudassar Nazar <br><span> Web Developer</span></h1>
-				<p><a href="#contact-section" class="btn btn-primary">Hire me</a> &nbsp;&nbsp;&nbsp;<a
+				<span id="hell-a" class="subheading" >Hello! This is</span><br/>
+				<h1 id="hell-b" class="mb-4 mt-3" > Mohammad Mudassar Nazar </h1>
+				<h3 id="hell-c"> Web Developer</h3>
+				<p><a href="#contact-section" class="btn btn-primary btn-outline-primary">Hire me</a> &nbsp;&nbsp;&nbsp;<a
 						href="./documents/Resume 1.pdf" target="_blank"
-						class="btn btn-primary btn-outline-primary">Download CV</a></p>
+						class="btn btn-primary ">Download CV</a></p>
 			</div>
 		</div>
 		
@@ -527,6 +597,10 @@
 						style="background-image: url(images/work-14.png);">
 						<div class="overlay"></div>
 						<div class="text text-center p-4">
+							<h3 style="color:white"> NextJs -MongoDB ATLAS 
+							</h3>
+							<br/>
+							<br/>
 
 							<button class="btn btn-primary btn-outline-primary"><a id="crud" href="https://meet-up-five.vercel.app/"
 									target="_blank">Go to Meetup Website</a></button>
@@ -667,7 +741,7 @@
 											</div>
 											<div class="media-body ">
 
-												<h4>B.Tech&nbsp;&nbsp;&nbsp;(81.1%)</h4>
+												<h4>B.Tech&nbsp;&nbsp;&nbsp;(81%)</h4>
 												<p>(DBATU, Lonere)<br />Electrical Engineering</p>
 											</div>
 										</div>
@@ -693,7 +767,7 @@
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
 											</div>
 											<div class="media-body ">
-												<h4>X<sup>th</sup>&nbsp;&nbsp;&nbsp;(89.4%)</h4>
+												<h4>X<sup>th</sup>&nbsp;&nbsp;&nbsp;(90%)</h4>
 												<p>(MSBSHSE Pune)<br></p>
 											</div>
 										</div>
